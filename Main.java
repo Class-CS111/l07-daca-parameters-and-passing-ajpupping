@@ -41,29 +41,31 @@ public class Main
         String uscisNum, dateOfBirth, validDate, expireDate;
 
         //INITIALIZATION SECTION
-        surname = "CHAPETON-LAMAS";
-        givenName = "NERY";
-        uscisNum1 = 12;
-        uscisNum2 = 4;
-        uscisNum3 = 789;
-        category = "C09";
-        cardNum = "SRC9876543210";
-        birthCountry = "Guatemala";
-        termsAndConditions = "None";
+        givenName = UtilityBelt.readString("Enter given name: ", 0, 50);
+        surname = UtilityBelt.readString("Enter surname: ", 0, 50);
+        category = UtilityBelt.readString("Enter category: ", 0, 3);
+        cardNum = UtilityBelt.readString("Enter card number: ", 0, 13);
+        birthCountry = UtilityBelt.readString("Enter birth country: ", 0, 50);
+        termsAndConditions = UtilityBelt.readString("Enter terms and conditions: ", 0, 50);
 
-        birthDay = 1;
-        birthMonth = "JAN";
-        birthYear = 1970;
+        sex = UtilityBelt.readChar("Enter sex: ", "FfMmIiXxNnOo"); //note single quotes
+        // female, male, intersex, nonbinary, other
 
-        sex = 'M'; //note single quotes
+        birthMonth = UtilityBelt.readString("Enter birth month, 3 letters in all caps: ", 3, 3);
+        birthDay = UtilityBelt.readInt("Enter birth day: ", 1, 31);
+        birthYear = UtilityBelt.readInt("Enter birth year: ", 1900, 2100);
 
-        validMonth = 2;
-        validDay = 2;
-        validYear = 2020;
+        uscisNum1 = UtilityBelt.readInt("Enter USCIS # part 1: ", 0, 999); 
+        uscisNum2 = UtilityBelt.readInt("Enter USCIS # part 2: ", 0, 999);
+        uscisNum3 = UtilityBelt.readInt("Enter USCIS # part 1: ", 0, 999);
 
-        expireMonth = 2;
-        expireDay = 2;
-        expireYear = 2022;
+        validMonth = UtilityBelt.readInt("Enter valid month: ", 1, 12);
+        validDay = UtilityBelt.readInt("Enter valid day: ", 1, 31);
+        validYear = UtilityBelt.readInt("Enter valid year: ", 1900, 2100);
+
+        expireMonth = UtilityBelt.readInt("Enter expiration month: ", 1, 12);
+        expireDay = UtilityBelt.readInt("Enter expiration day: ", 1, 31);
+        expireYear = UtilityBelt.readInt("Enter expiration year: ", 1900, 2100);
 
         //Strings to help clean up long printf's below
         uscisNum = String.format("%03d-%03d-%03d", uscisNum1, uscisNum2, uscisNum3);
